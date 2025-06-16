@@ -5,11 +5,9 @@ import 'package:meals_app/screens/meals_details_screen.dart';
 import 'meal_info_item.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem(
-      {super.key, required this.meal, required this.onToggleFavoriteMeal});
+  const MealItem({super.key, required this.meal});
 
   final Meal meal;
-  final void Function(Meal meal) onToggleFavoriteMeal;
 
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +
@@ -34,7 +32,6 @@ class MealItem extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (ctx) => MealsDetailScreen(
                           meal: meal,
-                          onToggleFavoriteMeal: onToggleFavoriteMeal,
                         )));
           },
           child: Stack(
