@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/widgets/filter_item.dart';
 
-import '../providers/filters_meals_provider.dart';
+import '../providers/filter_provider.dart';
 
 class FilterScreen extends ConsumerWidget {
   const FilterScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final activeFilters = ref.watch(filtersMealsProvider);
+    final activeFilters = ref.watch(filtersProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -21,7 +21,7 @@ class FilterScreen extends ConsumerWidget {
             filterSetCategory: activeFilters[Filter.glutenFree]!,
             onChanged: (isChecked) {
               ref
-                  .read(filtersMealsProvider.notifier)
+                  .read(filtersProvider.notifier)
                   .setFilter(Filter.glutenFree, isChecked);
             },
             filterTitle: 'Gluten-free',
@@ -31,7 +31,7 @@ class FilterScreen extends ConsumerWidget {
             filterSetCategory: activeFilters[Filter.lactoseFree]!,
             onChanged: (isChecked) {
               ref
-                  .read(filtersMealsProvider.notifier)
+                  .read(filtersProvider.notifier)
                   .setFilter(Filter.lactoseFree, isChecked);
             },
             filterTitle: 'Lactose-free',
@@ -41,7 +41,7 @@ class FilterScreen extends ConsumerWidget {
             filterSetCategory: activeFilters[Filter.vegan]!,
             onChanged: (isChecked) {
               ref
-                  .read(filtersMealsProvider.notifier)
+                  .read(filtersProvider.notifier)
                   .setFilter(Filter.vegan, isChecked);
             },
             filterTitle: 'Vegan',
@@ -51,7 +51,7 @@ class FilterScreen extends ConsumerWidget {
             filterSetCategory: activeFilters[Filter.vegetarian]!,
             onChanged: (isChecked) {
               ref
-                  .read(filtersMealsProvider.notifier)
+                  .read(filtersProvider.notifier)
                   .setFilter(Filter.vegetarian, isChecked);
             },
             filterTitle: 'Vegetarian',
