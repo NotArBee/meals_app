@@ -56,7 +56,7 @@ class MealsDetailScreen extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.network(meal.imageUrl),
+            Hero(tag: meal.id, child: Image.network(meal.imageUrl)),
             SizedBox(
               height: 12,
             ),
