@@ -8,13 +8,6 @@ import 'package:meals_app/widgets/main_drawer.dart';
 
 import '../providers/filter_provider.dart';
 
-const kInitialFilters = {
-  Filter.glutenFree: false,
-  Filter.lactoseFree: false,
-  Filter.vegan: false,
-  Filter.vegetarian: false
-};
-
 class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
